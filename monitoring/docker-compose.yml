@@ -11,7 +11,9 @@ services:
       - "9255:9255"
     command:
       - "--google.project-id=sahar-pfe"
-      - "--monitoring.metrics-type-prefixes=run.googleapis.com"
+      - "--monitoring.metrics-type-prefixes=run.googleapis.com
+      - "--monitoring.collector.fill-missing-labels"
+      - "--monitoring.drop-delegated-projects"
     restart: unless-stopped
 
   prometheus:
