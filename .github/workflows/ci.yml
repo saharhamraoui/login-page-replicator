@@ -109,4 +109,5 @@ jobs:
             --image us-central1-docker.pkg.dev/sahar-pfe/my-repo/my-app:latest \
             --platform managed \
             --region us-central1 \
-            --allow-unauthenticated
+            --allow-unauthenticated \
+            --service-account 94773365692-compute@developer.gserviceaccount.com
