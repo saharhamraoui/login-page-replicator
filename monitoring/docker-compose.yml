@@ -6,7 +6,7 @@ services:
       - GOOGLE_APPLICATION_CREDENTIALS=/credentials/gcp-key.json
       - GOOGLE_PROJECT_ID=sahar-pfe
     volumes:
-      - ./gcp-key.json:/credentials/gcp-key.json:ro
+      - /home/sahar/gcp-key.json:/credentials/gcp-key.json:ro
     ports:
       - "9255:9255"
     command:

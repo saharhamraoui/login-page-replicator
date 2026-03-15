@@ -14,7 +14,8 @@ RUN npm run build
 # Stage 2: Serve with Nginx
 FROM nginx:stable-alpine
 
-RUN apk upgrade --no-cache
+# Fix CVE-2026-22184: upgrade zlib to patched version 1.3.2-r0
+RUN apk add --no-cache zlib=1.3.2-r0
 
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
